@@ -1,0 +1,7 @@
+{
+  "name": "MobilApk",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

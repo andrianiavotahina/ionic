@@ -1,0 +1,63 @@
+import { Redirect, Route } from 'react-router-dom';
+import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+import Home from './pages/Home';
+
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/react/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+import '@ionic/react/css/normalize.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/typography.css';
+
+/* Optional CSS utils that can be commented out */
+import '@ionic/react/css/padding.css';
+import '@ionic/react/css/float-elements.css';
+import '@ionic/react/css/text-alignment.css';
+import '@ionic/react/css/text-transformation.css';
+import '@ionic/react/css/flex-utils.css';
+import '@ionic/react/css/display.css';
+
+/* Theme variables */
+import './theme/variables.css';
+import React from "react";
+import ListeEnchere from "./pages/ListeEnchere";
+import Rechargelment from "./pages/Rechargelment";
+import SingUp from "./pages/SingUp";
+import AddR from "./pages/AddRechargement";
+import InsertPage from "./pages/InsertPage";
+
+setupIonicReact();
+
+const App: React.FC = () => (
+  <IonApp>
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+          <Route exact path="/List">
+              <ListeEnchere />
+          </Route>
+          <Route exact path="/rechargement">
+              <Rechargelment />
+          </Route>
+          <Route exact path="/sing">
+              <SingUp />
+          </Route>
+          <Route exact path="/addRechargement">
+              <AddR />
+          </Route>
+          <Route exact path="/insertEnchere">
+              <InsertPage />
+          </Route>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
+      </IonRouterOutlet>
+    </IonReactRouter>
+  </IonApp>
+);
+
+export default App;
